@@ -172,9 +172,9 @@ def headers_list_to_dict(headers_list_list: list[list[str]] | None) -> dict:
 
     for header_list in headers_list_list:
         for header_data in header_list:
-            header_key_value = header_data.split(':')
-            k = header_key_value[0].strip()
-            v = header_key_value[1].strip()
+            header_key, header_value = header_data.split(':', 1)
+            k = header_key.strip()
+            v = header_value.strip()
             response_headers_dict[k] = v
 
     return response_headers_dict
